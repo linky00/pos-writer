@@ -1,0 +1,8 @@
+[package]
+name = "pos-writer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+codepage-437 = "0.1.0"
+escpos = { version = "0.13.0", features = ["full"] }
