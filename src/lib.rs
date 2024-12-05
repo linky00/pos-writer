@@ -174,6 +174,10 @@ pub fn print_line_with_style_box<D: Driver>(
         lines.push(text.to_string());
     }
 
+    if style.layers.iter().find(|layer| matches!(layer, StyleLayer::UpsideDown)).is_some() {
+        lines.reverse();
+    }
+
     if let Some(border_type) = &text_box.border_type {
         let border_characters = match border_type {
             BorderType::Single => SINGLE_BORDER_CHARS,
